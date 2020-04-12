@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/Faovi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://spawners/PlayerSpawn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Level001.gd" type="Script" id=3]
+
+[node name="Level001" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="PlayerSpawn" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 80, 64 )
+player_scene = ExtResource( 1 )
