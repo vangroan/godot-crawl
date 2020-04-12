@@ -14,11 +14,11 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _process(_delta: float):
 	pass
 
 
-func _physics_process(delta):
+func _physics_process(_delta: float):
 	
 	if Input.is_action_pressed('player_move_up'):
 		velocity.y = -speed
@@ -46,5 +46,5 @@ func _physics_process(delta):
 	print(velocity)
 	
 	# Move already takes delta time into account
-	move_and_slide(velocity)
+	var _new_velocity = move_and_slide(velocity)
 
