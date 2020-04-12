@@ -6,9 +6,6 @@ extends KinematicBody2D
 export(float) var speed = 200.0
 export(Vector2) var velocity = Vector2(0.0, 0.0)
 
-onready var animation_player = find_node('AnimationPlayer')
-onready var sprite = find_node('Sprite')
-
 
 func _ready():
 	pass
@@ -35,15 +32,13 @@ func _physics_process(_delta: float):
 		velocity.x = 0.0
 	
 	if velocity == Vector2.ZERO:
-		animation_player.play('idle')
+		$AnimationPlayer.play("idle")
 	
 	# Don't flip on standing still
 	if velocity.x < 0.0:
-		sprite.flip_h = true
+		$Sprite.flip_h = true
 	elif velocity.x > 0.0:
-		sprite.flip_h = false
-	
-	print(velocity)
+		$Sprite.flip_h = false
 	
 	# Move already takes delta time into account
 	var _new_velocity = move_and_slide(velocity)

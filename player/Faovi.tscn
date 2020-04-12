@@ -9,6 +9,7 @@ extents = Vector2( 5.98392, 5.98182 )
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
 length = 1.25
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -29,7 +30,6 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 2
-frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 9.99143 )
