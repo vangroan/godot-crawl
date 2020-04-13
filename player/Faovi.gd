@@ -32,7 +32,9 @@ func _physics_process(_delta: float):
 		velocity.x = 0.0
 	
 	if velocity == Vector2.ZERO:
-		$AnimationPlayer.play("idle")
+		$AnimationPlayer.play("idle-right")
+	else:
+		$AnimationPlayer.play("walk-right")
 	
 	# Don't flip on standing still
 	if velocity.x < 0.0:
